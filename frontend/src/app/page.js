@@ -81,7 +81,7 @@ export default function HomePage() {
         <div className="bg-dark-mid flex flex-col items-center justify-end p-10 md:p-12 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none"
                style={{
-                 backgroundImage: 'url(https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80)',
+                 backgroundImage: 'url(/dr-hero.jpeg)',
                  backgroundSize: 'cover',
                  backgroundPosition: 'center',
                }}
@@ -133,7 +133,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-12 items-center">
           <div className="rounded-2xl h-[300px] md:h-[360px] overflow-hidden relative">
             <img
-              src="https://heritagehealthsystem.com/wp-content/uploads/2025/03/olubunmi-olawale.jpg"
+              src="/dr image.jpeg"
               alt="Dr. Olubunmi Olawale, PMHNP-BC"
               className="w-full h-full object-cover"
               loading="lazy"

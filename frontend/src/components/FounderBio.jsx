@@ -41,7 +41,7 @@ export default function FounderBio() {
           <div className="order-1 md:order-1">
             <div className="rounded-3xl overflow-hidden shadow-xl bg-white border border-border p-4">
               <img
-                src="https://heritagehealthsystem.com/wp-content/uploads/2025/03/olubunmi-olawale.jpg"
+                src="/dr image.jpeg"
                 alt="Dr. Olubunmi Olawale, Founder of Heritage Health System"
                 className="rounded-2xl w-full h-auto"
                 loading="lazy"
