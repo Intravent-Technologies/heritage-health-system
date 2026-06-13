@@ -2,6 +2,7 @@ import Link from 'next/link'
 import BookingForm from '../components/BookingForm'
 import FounderBio from '../components/FounderBio'
 import PageCTA from '../components/PageCTA'
+import Resources from '../components/Resources'
 
 const services = [
   {
@@ -205,25 +206,7 @@ export default function HomePage() {
       <div className="hhs-section">
         <div className="hhs-tag">Resources</div>
         <h2 className="hhs-h2">Latest from Our Blog</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {[
-            { title: 'Understanding the Signs of Anxiety in Everyday Life', tag: 'Anxiety', tagColor: 'bg-teal', date: 'May 2026' },
-            { title: 'ADHD in Adults: Symptoms You Might Be Missing', tag: 'ADHD', tagColor: 'bg-green-dark', date: 'April 2026' },
-            { title: 'How Telehealth is Changing Mental Health Access', tag: 'Telehealth', tagColor: 'bg-teal', date: 'March 2026' },
-          ].map((post) => (
-            <div key={post.title} className="bg-white rounded-xl overflow-hidden border border-border">
-              <div className="h-[110px] bg-teal/10 relative">
-                <span className={`absolute top-3 left-3 text-sm px-3 py-1 rounded-full font-medium text-white ${post.tagColor}`}>
-                  {post.tag}
-                </span>
-              </div>
-              <div className="p-6">
-                <div className="font-medium text-lg text-dark leading-relaxed mb-2">{post.title}</div>
-                <div className="text-sm text-gray-300">{post.date} · 4 min read</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Resources />
       </div>
 
       <div className="hhs-section">

@@ -1,8 +1,6 @@
-import { readJSON } from '../_lib/db'
+import { fetchWpPosts } from '../_lib/wordpress'
 
 export async function GET() {
-  let posts = readJSON('posts.json')
-  posts = posts.filter((p) => p.published !== false)
-  posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  const posts = await fetchWpPosts()
   return Response.json(posts)
 }

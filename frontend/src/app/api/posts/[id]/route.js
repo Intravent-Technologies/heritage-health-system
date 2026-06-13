@@ -1,8 +1,7 @@
-import { readJSON } from '../../_lib/db'
+import { fetchWpPost } from '../../_lib/wordpress'
 
 export async function GET(req, { params }) {
-  const posts = readJSON('posts.json')
-  const post = posts.find((p) => p.id === params.id || p.slug === params.id)
+  const post = await fetchWpPost(params.id)
   if (!post) return Response.json({ error: 'Post not found.' }, { status: 404 })
   return Response.json(post)
 }
