@@ -24,6 +24,7 @@ function buildEmailHtml(booking) {
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Phone</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.phone}</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Email</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.email}</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Address</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.address}${booking.city ? ', ' + booking.city : ''}${booking.state ? ', ' + booking.state : ''} ${booking.zip || ''}</td></tr>
+  <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Appointment Type</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.appointmentType === 'telehealth' ? 'Telehealth' : booking.appointmentType === 'in-person' ? 'In-Person (Quincy, MA)' : 'No Preference'}</td></tr>
   <tr><td style="padding:8px 12px;background:#f0f4f4;font-weight:600;border:1px solid #ddd;" colspan="2">Insurance</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Primary Carrier</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.insuranceCarrier || 'N/A'}</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Policy Number</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.policyNumber || 'N/A'}</td></tr>
@@ -64,7 +65,7 @@ export async function POST(req) {
   const body = await req.json()
   const {
     firstName, lastName, email, phone, dob,
-    address, city, state, zip,
+    address, city, state, zip, appointmentType,
     subscriberName, subscriberDob, subscriberAddress,
     insuranceCarrier, policyNumber,
     secondaryInsuranceCarrier, secondaryPolicyNumber,
@@ -77,7 +78,7 @@ export async function POST(req) {
 
   const booking = {
     id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
-    firstName, lastName, email, phone, dob,
+    firstName, lastName, email, phone, dob, appointmentType: appointmentType || '',
     address: address || '', city: city || '', state: state || '', zip: zip || '',
     subscriberName: subscriberName || '',
     subscriberDob: subscriberDob || '',

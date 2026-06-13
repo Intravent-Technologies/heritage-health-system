@@ -3,15 +3,22 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+const US_STATES = [
+  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA',
+  'ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK',
+  'OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY',
+]
+
 const STEPS = ['Patient Info', 'Insurance', 'Emergency Contact']
 
 const INITIAL_FORM = {
   firstName: '', lastName: '', email: '', phone: '', dob: '',
-  address: '', city: '', state: '', zip: '',
+  address: '', city: '', state: 'TX', zip: '',
   subscriberName: '', subscriberDob: '', subscriberAddress: '',
   insuranceCarrier: '', policyNumber: '',
   secondaryInsuranceCarrier: '', secondaryPolicyNumber: '',
   emergencyName: '', emergencyPhone: '', emergencyRelationship: '',
+  appointmentType: '',
   hipaaConsent: false,
 }
 
@@ -29,14 +36,26 @@ export default function BookingForm() {
     return !val || (val.length >= 3 && /[a-zA-Z]/.test(val) && /[0-9]/.test(val))
   }
 
+  function isValidPhone(val) {
+    return /^[\d\s\-\.\(\)]{7,20}$/.test(val)
+  }
+
+  function isValidZip(val) {
+    return !val || /^\d{5}(-\d{4})?$/.test(val)
+  }
+
   function canContinue() {
-    if (step === 1) return form.firstName && form.lastName && form.email && form.phone && form.dob && form.hipaaConsent
+    if (step === 1) {
+      return form.firstName && form.lastName && form.email && form.dob && form.hipaaConsent
+        && form.appointmentType && isValidPhone(form.phone) && isValidZip(form.zip)
+        && form.state
+    }
     if (step === 2) {
       if (form.insuranceCarrier && !isValidPolicy(form.policyNumber)) return false
       if (form.secondaryInsuranceCarrier && !isValidPolicy(form.secondaryPolicyNumber)) return false
       return true
     }
-    if (step === 3) return form.emergencyName && form.emergencyPhone && form.emergencyRelationship
+    if (step === 3) return form.emergencyName && isValidPhone(form.emergencyPhone) && form.emergencyRelationship
     return true
   }
 
@@ -119,43 +138,76 @@ export default function BookingForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
             <div>
               <label className="sr-only" htmlFor="firstName">Patient First Name</label>
-              <input id="firstName" name="firstName" value={form.firstName} onChange={handleChange} required placeholder="Patient First Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <input id="firstName" name="firstName" value={form.firstName} onChange={handleChange} required placeholder="First Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
             </div>
             <div>
               <label className="sr-only" htmlFor="lastName">Patient Last Name</label>
-              <input id="lastName" name="lastName" value={form.lastName} onChange={handleChange} required placeholder="Patient Last Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <input id="lastName" name="lastName" value={form.lastName} onChange={handleChange} required placeholder="Last Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
             </div>
           </div>
           <div className="mb-3">
             <label className="sr-only" htmlFor="dob">Date of Birth</label>
             <input id="dob" name="dob" type="date" value={form.dob} onChange={handleChange} required placeholder="Date of Birth *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
           </div>
+
+          <div className="mb-4">
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Appointment Preference *</p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { value: 'in-person', label: 'In-Person (Quincy, MA)' },
+                { value: 'telehealth', label: 'Telehealth (Video)' },
+                { value: 'either', label: 'No Preference' },
+              ].map((opt) => (
+                <label key={opt.value} className={`flex-1 min-w-[140px] cursor-pointer border rounded-xl p-3 text-center transition ${
+                  form.appointmentType === opt.value
+                    ? 'bg-teal text-white border-teal'
+                    : 'bg-white text-gray-600 border-border hover:border-teal'
+                }`}>
+                  <input type="radio" name="appointmentType" value={opt.value} checked={form.appointmentType === opt.value}
+                    onChange={handleChange} className="sr-only" />
+                  <span className="text-sm font-medium">{opt.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
           <div className="mb-3">
-            <label className="sr-only" htmlFor="address">Patient Address</label>
+            <label className="sr-only" htmlFor="address">Street Address</label>
             <input id="address" name="address" value={form.address} onChange={handleChange} placeholder="Street Address" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
-            <div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+            <div className="col-span-2 sm:col-span-2">
               <label className="sr-only" htmlFor="city">City</label>
               <input id="city" name="city" value={form.city} onChange={handleChange} placeholder="City" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
             </div>
             <div>
               <label className="sr-only" htmlFor="state">State</label>
-              <input id="state" name="state" value={form.state} onChange={handleChange} placeholder="State" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <select id="state" name="state" value={form.state} onChange={handleChange} className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans">
+                <option value="">State *</option>
+                {US_STATES.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
             </div>
             <div>
-              <label className="sr-only" htmlFor="zip">ZIP</label>
-              <input id="zip" name="zip" value={form.zip} onChange={handleChange} placeholder="ZIP" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <label className="sr-only" htmlFor="zip">ZIP Code</label>
+              <input id="zip" name="zip" value={form.zip} onChange={handleChange} placeholder="ZIP" maxLength={5} className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              {form.zip && !isValidZip(form.zip) && (
+                <p className="text-xs text-red-500 mt-1">Enter a valid 5-digit ZIP</p>
+              )}
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
             <div>
               <label className="sr-only" htmlFor="phone">Phone Number</label>
-              <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} required placeholder="Phone Number *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange} required placeholder="Phone Number * (e.g. 555-123-4567)" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              {form.phone && !isValidPhone(form.phone) && (
+                <p className="text-xs text-red-500 mt-1">Enter a valid phone number</p>
+              )}
             </div>
             <div>
               <label className="sr-only" htmlFor="email">Patient Email</label>
-              <input id="email" name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Patient Email *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              <input id="email" name="email" type="email" value={form.email} onChange={handleChange} required placeholder="Email *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
             </div>
           </div>
           <div className="bg-teal/5 border border-teal/10 rounded-lg p-4 mt-4">
