@@ -62,8 +62,8 @@ backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?
           <div className="order-1 md:order-2">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
-                alt="Heritage Health System"
+                src="/building.jpeg"
+                alt="Heritage Health System building"
                 className="w-full h-auto"
                 loading="lazy"
               />

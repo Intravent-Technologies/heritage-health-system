@@ -87,6 +87,14 @@ export default function ContactPage() {
               className="w-full"
             />
           </div>
+          <div className="mt-6 rounded-2xl overflow-hidden shadow-lg border border-border">
+            <img
+              src="/building.jpeg"
+              alt="Heritage Health System building - 21 Mayor Thomas J McGrath Hwy, Quincy, MA"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
           <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
             <svg className="w-5 h-5 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
