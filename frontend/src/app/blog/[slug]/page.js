@@ -49,7 +49,7 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <div className="bg-dark px-6 md:px-12 py-16 md:py-20">
+      <div className="bg-dark px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
         <div className="max-w-3xl mx-auto">
           <Link href="/blog" className="text-sm text-teal-light hover:text-teal transition mb-4 inline-block">&larr; Back to Blog</Link>
           <div className="flex flex-wrap gap-2 mb-4 mt-2">
@@ -64,7 +64,7 @@ export default function BlogPostPage() {
         </div>
       </div>
 
-      <div className="px-6 md:px-12 py-12 md:py-16">
+      <div className="px-4 sm:px-6 md:px-12 py-12 md:py-16">
         <div className="max-w-3xl mx-auto">
           {post.image && (
             <div className="rounded-2xl overflow-hidden mb-10">
@@ -75,7 +75,7 @@ export default function BlogPostPage() {
         </div>
       </div>
 
-      <div className="px-6 md:px-12 pb-12">
+      <div className="px-4 sm:px-6 md:px-12 pb-12">
         <div className="max-w-3xl mx-auto border-t border-border pt-8 flex justify-between items-center">
           <Link href="/blog" className="text-sm text-teal hover:text-teal-dark transition">&larr; Back to Blog</Link>
           <Link href="/contact" className="bg-teal text-white text-sm px-6 py-3 rounded-button inline-block text-center w-full sm:w-auto">

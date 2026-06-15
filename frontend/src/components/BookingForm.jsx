@@ -13,7 +13,7 @@ const STEPS = ['Patient Info', 'Insurance', 'Emergency Contact']
 
 const INITIAL_FORM = {
   firstName: '', lastName: '', email: '', phone: '', dob: '',
-  address: '', city: '', state: 'TX', zip: '',
+  address: '', city: '', state: 'MA', zip: '',
   subscriberName: '', subscriberDob: '', subscriberAddress: '',
   insuranceCarrier: '', policyNumber: '',
   secondaryInsuranceCarrier: '', secondaryPolicyNumber: '',
@@ -120,8 +120,8 @@ export default function BookingForm() {
                 </svg>
               ) : i + 1}
             </div>
-            <span className={`text-xs hidden sm:inline ${i + 1 === step ? 'text-teal font-medium' : 'text-gray-400'}`}>{label}</span>
-            {i < STEPS.length - 1 && <div className="w-4 sm:w-6 h-px bg-gray-200 mx-0.5 sm:mx-1 hidden sm:block" />}
+            <span className={`text-[10px] sm:text-xs ${i + 1 === step ? 'text-teal font-medium' : 'text-gray-400'}`}>{label}</span>
+            {i < STEPS.length - 1 && <div className="w-3 sm:w-6 h-px bg-gray-200 mx-0.5 sm:mx-1" />}
           </div>
         ))}
       </div>
@@ -135,30 +135,33 @@ export default function BookingForm() {
       {step === 1 && (
         <div>
           <h3 className="font-serif text-lg text-dark mb-4">Patient Information</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-            <div>
-              <label className="sr-only" htmlFor="firstName">Patient First Name</label>
-              <input id="firstName" name="firstName" value={form.firstName} onChange={handleChange} required placeholder="First Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
-            </div>
-            <div>
-              <label className="sr-only" htmlFor="lastName">Patient Last Name</label>
-              <input id="lastName" name="lastName" value={form.lastName} onChange={handleChange} required placeholder="Last Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+          <div className="mb-3">
+            <label className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5 block">Patient Name *</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="sr-only" htmlFor="firstName">First Name</label>
+                <input id="firstName" name="firstName" value={form.firstName} onChange={handleChange} required placeholder="First Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              </div>
+              <div>
+                <label className="sr-only" htmlFor="lastName">Last Name</label>
+                <input id="lastName" name="lastName" value={form.lastName} onChange={handleChange} required placeholder="Last Name *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+              </div>
             </div>
           </div>
           <div className="mb-3">
-            <label className="sr-only" htmlFor="dob">Date of Birth</label>
-            <input id="dob" name="dob" type="date" value={form.dob} onChange={handleChange} required placeholder="Date of Birth *" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
+            <label className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5 block" htmlFor="dob">Date of Birth *</label>
+            <input id="dob" name="dob" type="date" value={form.dob} onChange={handleChange} required className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
           </div>
 
           <div className="mb-4">
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Appointment Preference *</p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               {[
                 { value: 'in-person', label: 'In-Person (Quincy, MA)' },
                 { value: 'telehealth', label: 'Telehealth (Video)' },
                 { value: 'either', label: 'No Preference' },
               ].map((opt) => (
-                <label key={opt.value} className={`flex-1 min-w-[140px] cursor-pointer border rounded-xl p-3 text-center transition ${
+                <label key={opt.value} className={`flex-1 cursor-pointer border rounded-xl px-2 py-2.5 sm:px-3 sm:py-3 text-center transition ${
                   form.appointmentType === opt.value
                     ? 'bg-teal text-white border-teal'
                     : 'bg-white text-gray-600 border-border hover:border-teal'
@@ -175,8 +178,8 @@ export default function BookingForm() {
             <label className="sr-only" htmlFor="address">Street Address</label>
             <input id="address" name="address" value={form.address} onChange={handleChange} placeholder="Street Address" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
-            <div className="col-span-2 sm:col-span-2">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 mb-3">
+            <div className="col-span-2">
               <label className="sr-only" htmlFor="city">City</label>
               <input id="city" name="city" value={form.city} onChange={handleChange} placeholder="City" className="w-full bg-white border border-[#ccdadb] rounded-lg px-4 py-3 text-sm text-gray-700 outline-none font-sans" />
             </div>

@@ -58,6 +58,19 @@ export async function fetchWpPost(slugOrId) {
   return null
 }
 
+const IMAGE_OVERRIDES = {
+  'what-are-the-6-types-of-anxiety-disorders': 'https://images.pexels.com/photos/8560282/pexels-photo-8560282.jpeg?w=800&q=80',
+  'unlocking-relief-how-spravato-is-revolutionizing-depression-treatment': 'https://images.pexels.com/photos/6382598/pexels-photo-6382598.jpeg?w=800&q=80',
+  'is-25mg-of-zoloft-enough-for-anxiety': 'https://images.pexels.com/photos/3683077/pexels-photo-3683077.jpeg?w=800&q=80',
+  'how-a-person-with-bipolar-thinks': 'https://images.pexels.com/photos/6756555/pexels-photo-6756555.jpeg?w=800&q=80',
+  'psychiatric-nurse-practitioner': 'https://images.pexels.com/photos/5699436/pexels-photo-5699436.jpeg?w=800&q=80',
+  'dose-of-propranolol-for-anxiety': 'https://images.pexels.com/photos/208541/pexels-photo-208541.jpeg?w=800&q=80',
+  'what-happens-in-a-psychiatric-evaluation': 'https://images.pexels.com/photos/3958468/pexels-photo-3958468.jpeg?w=800&q=80',
+  'stop-shaking-from-anxiety-immediately': 'https://images.pexels.com/photos/6382634/pexels-photo-6382634.jpeg?w=800&q=80',
+  'can-depression-be-self-sabotaging': 'https://images.pexels.com/photos/1134204/pexels-photo-1134204.jpeg?w=800&q=80',
+  'telehealth-and-in-person-care': 'https://images.pexels.com/photos/7195120/pexels-photo-7195120.jpeg?w=800&q=80',
+}
+
 function transformWpPost(post) {
   const media = post._embedded?.['wp:featuredmedia']?.[0]
   return {
@@ -66,7 +79,7 @@ function transformWpPost(post) {
     slug: post.slug,
     content: post.content.rendered,
     excerpt: post.excerpt.rendered.replace(/<[^>]+>/g, '').trim(),
-    image: media?.source_url || '',
+    image: IMAGE_OVERRIDES[post.slug] || media?.source_url || '',
     tags: ['blog'],
     published: true,
     createdAt: post.date,

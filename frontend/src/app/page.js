@@ -3,6 +3,9 @@ import BookingForm from '../components/BookingForm'
 import FounderBio from '../components/FounderBio'
 import PageCTA from '../components/PageCTA'
 import Resources from '../components/Resources'
+import ReviewsSection from '../components/ReviewsSection'
+import ReviewForm from '../components/ReviewForm'
+import InsuranceLogos from '../components/InsuranceLogos'
 
 const services = [
   {
@@ -30,11 +33,7 @@ const services = [
     desc: 'Secure video consultations bringing expert mental health care directly to you.',
     path: '/services/telehealth-services',
   },
-  {
-    title: 'Person-Centered Care',
-    desc: 'Compassionate, individualized care addressing anxiety, depression, trauma, and more.',
-    path: '/services/person-centered-behavioral-healthcare',
-  },
+
 ]
 
 const conditions = [
@@ -50,7 +49,7 @@ const conditions = [
 
 const faqs = [
   { q: 'How do I schedule an appointment?', a: 'Fill out our insurance verification form, and our team will contact you within 1\u20132 business days. You can typically be seen within 1\u20132 weeks. You can also call or text (781) 742-0834.' },
-  { q: 'Do you offer in-person and telehealth visits?', a: 'Yes \u2014 both options are available on weekdays and weekends. Telehealth sessions are fully secure.' },
+  { q: 'Do you offer in-person and telehealth visits?', a: 'Yes - both options are available on weekdays. Telehealth sessions are fully secure.' },
   { q: 'What insurance do you accept?', a: 'We accept UHC, Optum, Cigna, Blue Cross, Aetna, Medicare, and Oscar. Submit our insurance verification form and we will confirm your coverage within 1\u20132 business days.' },
 ]
 
@@ -58,17 +57,17 @@ export default function HomePage() {
   return (
     <>
       <div className="grid md:grid-cols-[1.1fr_0.9fr] min-h-[520px]">
-        <div className="bg-dark px-6 md:px-12 py-16 md:py-24 flex flex-col justify-center relative overflow-hidden">
+        <div className="bg-dark px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 flex flex-col justify-center relative overflow-hidden">
           <div className="inline-flex items-center gap-1.5 bg-teal/15 text-teal-light text-xs px-4 py-2 rounded-full border border-teal/25 mb-6 w-fit">
             <span className="w-2 h-2 rounded-full bg-teal inline-block" />
             Now Accepting New Patients
           </div>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
             Your Partner in<br />
             <em className="text-green not-italic">Mental Wellness</em>
           </h1>
           <p className="text-base md:text-lg text-[#8AACAC] leading-relaxed mb-10 max-w-lg">
-            Compassionate, evidence-based mental health care in Quincy, MA. Evaluations, therapy, medication management, and telehealth \u2014 all in one place.
+            Compassionate, evidence-based mental health care for adults 18+ in Quincy, MA. Evaluations, therapy, medication management, and telehealth - all in one place.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="bg-teal text-white text-sm font-medium px-8 py-4 rounded-button text-center w-full sm:w-auto">
@@ -79,7 +78,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="bg-dark-mid flex flex-col items-center justify-end p-10 md:p-12 relative overflow-hidden">
+        <div className="bg-dark-mid flex flex-col items-center justify-end p-4 sm:p-10 md:p-12 relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none"
                style={{
                  backgroundImage: 'url(/dr-hero.jpeg)',
@@ -89,9 +88,9 @@ export default function HomePage() {
           />
           <div className="flex items-center gap-1.5 mb-3.5 relative z-[1] self-start">
             <div className="w-2 h-2 rounded-full bg-green" />
-            <span className="text-sm text-[#8AACAC]">Availability: <strong className="text-white font-medium">Weekdays & Weekends · In-Person & Virtual</strong></span>
+            <span className="text-sm text-[#8AACAC]">Availability: <strong className="text-white font-medium">Weekdays · In-Person & Virtual</strong></span>
           </div>
-          <div className="bg-white/10 border border-white/15 rounded-xl p-5 w-full relative z-[1]">
+          <div className="bg-white/10 border border-white/15 rounded-xl p-3 sm:p-5 w-full relative z-[1]">
             <div className="font-serif text-xl text-white mb-1">Dr. Olubunmi Olawale</div>
             <div className="text-sm text-teal mb-3">DNP, APRN, PMHNP-BC · Psychiatric Mental Health NP</div>
             <div className="flex flex-wrap gap-1.5">
@@ -102,6 +101,16 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-teal/5 hhs-section">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="hhs-tag">Our Mission</div>
+          <h2 className="hhs-h2 text-3xl md:text-4xl mb-8">What Drives Us</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto italic">
+            &ldquo;Our mission is to offer evidence-based assistance and person-centered care to adults and their families who are facing mental health challenges with compassion and respect. At Heritage Health System, our mission is to provide compassionate, comprehensive and accessible mental health care to individuals and families in our community. We are committed to fostering an environment of healing, hope and empowerment, where every person feels valued and supported on their journey to mental wellness.&rdquo;
+          </p>
         </div>
       </div>
 
@@ -152,7 +161,7 @@ export default function HomePage() {
               With over 5 years of specialized experience, Dr. Olawale provides comprehensive psychiatric evaluations, diagnosis, and medication management for a wide range of conditions including anxiety, depression, bipolar disorder, ADHD, OCD, and psychotic disorders.
             </p>
             <p className="text-base text-gray-500 leading-relaxed mb-6">
-              A graduate of UMass Dartmouth and Northeastern University, she combines deep clinical expertise with compassionate, patient-centered care. Currently accepting new patients on weekdays and weekends \u2014 both virtually and in-person.
+              A graduate of UMass Dartmouth and Northeastern University, she combines deep clinical expertise with compassionate, patient-centered care. Currently accepting new patients on weekdays - both virtually and in-person.
             </p>
             <Link href="/contact" className="bg-teal text-white text-sm px-6 py-3 rounded-button inline-block text-center w-full sm:w-auto">
               Book with Dr. Olawale &rarr;
@@ -162,7 +171,7 @@ export default function HomePage() {
       </div>
 
       <div className="hhs-section">
-        <div className="bg-dark rounded-2xl p-8 md:p-12">
+          <div className="bg-dark rounded-2xl p-4 sm:p-8 md:p-12">
           <div className="hhs-tag" style={{color: '#1AACB8'}}>Conditions We Treat</div>
           <h2 className="hhs-h2 text-white mb-2">Tailored Care for a Wide Range of Conditions</h2>
           <p className="text-base text-[#5a8a8e] leading-relaxed mb-8">Custom assessments and individualized treatment strategies to restore control over your well-being.</p>
@@ -184,10 +193,19 @@ export default function HomePage() {
         </div>
       </div>
 
+      <div className="hhs-section">
+        <div className="hhs-tag text-center">Insurance Accepted</div>
+        <h2 className="hhs-h2 text-center mb-2">We Work With Your Insurance</h2>
+        <p className="text-sm text-muted text-center max-w-xl mx-auto mb-2">
+          We accept a wide range of insurance plans to make care accessible. Contact us to verify your coverage.
+        </p>
+        <InsuranceLogos />
+      </div>
+
       <div className="w-full bg-green-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-10"
              style={{
-               backgroundImage: 'url(https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80)'
+               backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)'
              }}
         ></div>
         <div className="hhs-section relative z-10">
@@ -214,7 +232,7 @@ export default function HomePage() {
         <h2 className="hhs-h2 mb-6">Common Questions</h2>
         <div className="space-y-3">
           {faqs.map((faq) => (
-            <details key={faq.q} className="bg-white rounded-xl px-6 py-5 border border-border group">
+            <details key={faq.q} className="bg-white rounded-xl px-4 sm:px-6 py-5 border border-border group">
               <summary className="font-medium text-base text-dark flex items-center justify-between cursor-pointer">
                 {faq.q}
                 <svg className="w-5 h-5 text-teal flex-shrink-0 group-open:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,7 +246,20 @@ export default function HomePage() {
       </div>
 
       <div className="hhs-section">
-        <div className="bg-[#EAF3F4] rounded-2xl p-6 md:p-12 grid md:grid-cols-2 gap-8 md:gap-10">
+        <div className="hhs-tag">Patient Reviews</div>
+        <h2 className="hhs-h2 mb-8">What Our Patients Say</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            <ReviewsSection limit={3} />
+          </div>
+          <div>
+            <ReviewForm />
+          </div>
+        </div>
+      </div>
+
+      <div className="hhs-section">
+        <div className="bg-[#EAF3F4] rounded-2xl p-4 sm:p-6 md:p-12 grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
           <div>
             <div className="hhs-tag" style={{color: '#0E8A94'}}>Get in Touch</div>
             <h2 className="hhs-h2">Take the First Step</h2>
@@ -251,7 +282,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>21 Mayor Thomas J McGrath Hwy, Unit 306, Quincy, MA</span>
+                <span>21 Mayor Thomas J McGrath Hwy, Unit 306, Quincy, MA 02169</span>
               </div>
             </div>
           </div>

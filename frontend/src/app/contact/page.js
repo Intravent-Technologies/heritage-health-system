@@ -1,12 +1,22 @@
 import BookingForm from '../../components/BookingForm'
 import PageCTA from '../../components/PageCTA'
+import InsuranceLogos from '../../components/InsuranceLogos'
 
 export default function ContactPage() {
   return (
     <>
-      <div className="bg-dark px-6 md:px-12 py-16 md:py-24 text-center">
+      <div className="bg-dark px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-3">Book an Appointment</h1>
         <p className="text-base md:text-lg text-gray-200">Insurance Verification & Scheduling</p>
+      </div>
+
+      <div className="bg-white/50 hhs-section border-b border-border/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="hhs-tag">Insurance Accepted</div>
+          <h2 className="hhs-h2 mb-2">We Work With Your Insurance</h2>
+          <p className="text-sm text-muted max-w-xl mx-auto mb-2">We accept a wide range of insurance plans. Contact us to verify your coverage.</p>
+          <InsuranceLogos />
+        </div>
       </div>
 
       <div className="hhs-section">
@@ -22,12 +32,12 @@ export default function ContactPage() {
               <p>2. Pick an available date and time.</p>
               <p>3. We verify your insurance &mdash; you are all set.</p>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {[
                 { icon: 'phone', label: 'Phone', value: '(781) 742-0834', href: 'tel:0017817420834' },
                 { icon: 'phone', label: 'Fax', value: '(781) 459-2666' },
                 { icon: 'mail', label: 'Support', value: 'info@heritagehealthsystem.com', href: 'mailto:info@heritagehealthsystem.com' },
-                { icon: 'map', label: 'Address', value: '21 Mayor Thomas J McGrath Hwy Unit 306, Quincy, MA' },
+                { icon: 'map', label: 'Address', value: '21 Mayor Thomas J McGrath Hwy Unit 306, Quincy, MA 02169' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -49,10 +59,39 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 md:p-10 border border-border">
+          <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-10 border border-border">
             <h3 className="text-sm font-medium text-dark mb-2">Complete Your Booking</h3>
             <p className="text-xs text-gray-400 mb-6">All fields marked with * are required.</p>
             <BookingForm />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-cream hhs-section">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="hhs-tag">Our Location</div>
+            <h2 className="hhs-h2 mb-2">Find Us</h2>
+            <p className="text-sm text-muted">21 Mayor Thomas J McGrath Hwy, Unit 306, Quincy, MA 02169</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.5!2d-71.0075!3d42.2515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a7e5b7c6b0f%3A0x8e5b5f5b5e5b6b0f!2s21%20Mayor%20Thomas%20J%20McGrath%20Hwy%2C%20Quincy%2C%20MA%2002169!5e0!3m2!1sen!2sus!4v1"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Heritage Health System Location"
+              className="w-full"
+            />
+          </div>
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
+            <svg className="w-5 h-5 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Wheelchair accessible entrance available
           </div>
         </div>
       </div>

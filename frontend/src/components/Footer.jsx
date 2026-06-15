@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-dark px-6 md:px-12 pt-14 pb-8">
+    <footer className="bg-dark px-4 sm:px-6 md:px-12 pt-10 sm:pt-14 pb-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-10 mb-8">
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -52,9 +52,9 @@ export default function Footer() {
             <a href="tel:0017817420834" className="text-sm text-gray-400 hover:text-teal transition w-fit">(781) 742-0834</a>
             <a href="mailto:info@heritagehealthsystem.com" className="text-sm text-gray-400 hover:text-teal transition w-fit">info@heritagehealthsystem.com</a>
             <span className="text-sm text-gray-400">Quincy, MA 02169</span>
-            <Link href="/contact" className="text-sm text-teal hover:text-green transition mt-1 w-fit">
+            <a href="https://www.tebra.com/care/practice/heritage-health-system-llc-198598" target="_blank" rel="noopener noreferrer" className="text-sm text-teal hover:text-green transition mt-1 w-fit">
               Patient Portal &rarr;
-            </Link>
+            </a>
           </div>
         </div>
       </div>

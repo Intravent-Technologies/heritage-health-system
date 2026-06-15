@@ -45,14 +45,14 @@ function buildEmailHtml(booking) {
 async function sendBookingEmail(booking) {
   const transporter = createTransporter()
   if (!transporter) {
-    console.log('SMTP not configured — skipping email for', booking.id)
+    console.log('SMTP not configured - skipping email for', booking.id)
     return
   }
   try {
     await transporter.sendMail({
       from: process.env.SMTP_FROM || '"Heritage Health System" <noreply@heritagehealthsystem.com>',
       to: COMPANY_EMAIL,
-      subject: `New Patient Inquiry — ${booking.firstName} ${booking.lastName}`,
+      subject: `New Patient Inquiry - ${booking.firstName} ${booking.lastName}`,
       html: buildEmailHtml(booking),
     })
     console.log('Booking email sent for', booking.id)

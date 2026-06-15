@@ -97,7 +97,7 @@ export default function Admin() {
 
   function renderFaxSheet(b) {
     const faxContent = `
-HERITAGE HEALTH SYSTEM — INSURANCE VERIFICATION FAX
+HERITAGE HEALTH SYSTEM - INSURANCE VERIFICATION FAX
 Fax to: (866) 437-5208
 
 Provider Name: _____________         Date: ${new Date().toLocaleDateString()}
@@ -179,19 +179,19 @@ THIS NOTICE IS NOT A GUARANTEE OF PAYMENT. BENEFITS ARE SUBJECT TO ALL CONTRACT 
   return (
     <div className="px-6 md:px-12 py-10 max-w-6xl mx-auto">
       {message && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-dark text-white text-sm px-6 py-3 rounded-full shadow-lg z-50 animate-slide-up">
+        <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 bg-dark text-white text-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg z-50 animate-slide-up">
           {message}
         </div>
       )}
 
-      <div className="flex items-center gap-2 mb-6 flex-wrap">
-        {['dashboard', 'slots', 'bookings', 'blog'].map((t) => (
-          <button key={t} onClick={() => setView(t)}
-            className={`text-sm px-5 py-2.5 rounded-button transition ${view === t ? 'bg-teal text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
-            {t === 'dashboard' ? 'Dashboard' : t === 'slots' ? 'Slot Management' : t === 'bookings' ? 'Bookings' : 'Blog'}
-          </button>
-        ))}
-        <button onClick={logout} className="text-sm px-5 py-2.5 rounded-button transition text-gray-500 hover:text-red-500 ml-auto">Logout</button>
+        <div className="flex items-center gap-2 mb-6 flex-wrap">
+          {['dashboard', 'slots', 'bookings', 'blog'].map((t) => (
+            <button key={t} onClick={() => setView(t)}
+              className={`text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-button transition ${view === t ? 'bg-teal text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
+              {t === 'dashboard' ? 'Dashboard' : t === 'slots' ? 'Slots' : t === 'bookings' ? 'Bookings' : 'Blog'}
+            </button>
+          ))}
+          <button onClick={logout} className="text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-2.5 rounded-button transition text-gray-500 hover:text-red-500 ml-auto">Logout</button>
       </div>
 
       {view === 'dashboard' && (
@@ -220,34 +220,34 @@ THIS NOTICE IS NOT A GUARANTEE OF PAYMENT. BENEFITS ARE SUBJECT TO ALL CONTRACT 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="font-medium text-sm text-dark mb-4">Add Single Slot</h3>
-              <div className="flex flex-wrap gap-3 items-end">
-                <div>
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-end">
+                <div className="flex-1 min-w-0">
                   <label className="text-xs text-gray-500 block mb-1">Date</label>
                   <input type="date" value={newSlotDate} onChange={(e) => setNewSlotDate(e.target.value)}
-                    className="px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
+                    className="w-full px-3 sm:px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <label className="text-xs text-gray-500 block mb-1">Time</label>
                   <input type="time" value={newSlotTime} onChange={(e) => setNewSlotTime(e.target.value)}
-                    className="px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
+                    className="w-full px-3 sm:px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
                 </div>
-                <button onClick={addSlot} className="bg-teal text-white text-sm px-6 py-2.5 rounded-button font-medium hover:bg-teal-dark transition">Add Slot</button>
+                <button onClick={addSlot} className="bg-teal text-white text-sm px-6 py-2.5 rounded-button font-medium hover:bg-teal-dark transition w-full sm:w-auto">Add Slot</button>
               </div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h3 className="font-medium text-sm text-dark mb-4">Batch Generate (Weekdays)</h3>
-              <div className="flex flex-wrap gap-3 items-end">
-                <div>
+              <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-end">
+                <div className="flex-1 min-w-0">
                   <label className="text-xs text-gray-500 block mb-1">Start Date</label>
                   <input type="date" value={batchStart} onChange={(e) => setBatchStart(e.target.value)}
-                    className="px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
+                    className="w-full px-3 sm:px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <label className="text-xs text-gray-500 block mb-1">End Date</label>
                   <input type="date" value={batchEnd} onChange={(e) => setBatchEnd(e.target.value)}
-                    className="px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
+                    className="w-full px-3 sm:px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal/20" />
                 </div>
-                <button onClick={generateSlots} className="bg-green-dark text-white text-sm px-6 py-2.5 rounded-button font-medium hover:opacity-90 transition">Generate</button>
+                <button onClick={generateSlots} className="bg-green-dark text-white text-sm px-6 py-2.5 rounded-button font-medium hover:opacity-90 transition w-full sm:w-auto">Generate</button>
               </div>
             </div>
           </div>

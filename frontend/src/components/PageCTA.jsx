@@ -6,7 +6,7 @@ export default function PageCTA() {
       <div className="max-w-5xl mx-auto text-center relative overflow-hidden rounded-3xl p-10 md:p-16 border border-white/10">
         <div className="absolute inset-0 opacity-5"
              style={{
-               backgroundImage: 'url(https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80)',
+               backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
                backgroundSize: 'cover',
                backgroundPosition: 'center'
              }}

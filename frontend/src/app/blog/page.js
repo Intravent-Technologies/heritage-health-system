@@ -50,12 +50,12 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="bg-dark px-6 md:px-12 py-16 md:py-24 text-center">
+      <div className="bg-dark px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-3">Our Blog</h1>
         <p className="text-base md:text-lg text-gray-300">Insights and resources for your mental health journey</p>
       </div>
 
-      <div className="px-6 md:px-12 py-12 md:py-20">
+      <div className="px-4 sm:px-6 md:px-12 py-12 md:py-20">
         <div className="max-w-5xl mx-auto">
           {posts.length === 0 ? (
             <div className="text-center py-16">

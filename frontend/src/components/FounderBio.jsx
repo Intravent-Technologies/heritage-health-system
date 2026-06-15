@@ -7,7 +7,7 @@ export default function FounderBio() {
     <div className="bg-cream hhs-section relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none"
            style={{
-             backgroundImage: 'url(https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&q=80)',
+             backgroundImage: 'url(https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80)',
              backgroundSize: 'cover',
              backgroundPosition: 'center',
              filter: 'blur(4px)',

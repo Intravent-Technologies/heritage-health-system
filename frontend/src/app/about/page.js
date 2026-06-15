@@ -1,19 +1,22 @@
 import Link from 'next/link'
 import BookingForm from '../../components/BookingForm'
 import PageCTA from '../../components/PageCTA'
+import ReviewsSection from '../../components/ReviewsSection'
+import ReviewForm from '../../components/ReviewForm'
+import InsuranceLogos from '../../components/InsuranceLogos'
 
 const values = [
   { icon: 'compassion', title: 'Compassion', desc: 'We approach every patient with empathy, dignity, and respect.' },
   { icon: 'evidence', title: 'Evidence-Based', desc: 'We use the latest research and proven practices in our care.' },
   { icon: 'centered', title: 'Person-Centered', desc: 'Your unique needs guide every treatment plan we create.' },
-  { icon: 'accessible', title: 'Accessible', desc: 'In-person and telehealth services to meet you where you are.' },
+  { icon: 'accessible', title: 'Accessible', desc: 'In-person and telehealth services with wheelchair-accessible entrance.' },
 ]
 
 const stats = [
   { number: '12+', label: 'Years of Clinical Experience' },
   { number: '500+', label: 'Patients Supported' },
   { number: '10+', label: 'Specialized Services' },
-  { number: '4.8', label: 'Patient Satisfaction' },
+  { number: '5-Star', label: 'Rating' },
 ]
 
 function ValueIcon({ icon }) {
@@ -27,13 +30,13 @@ function ValueIcon({ icon }) {
 export default function AboutPage() {
   return (
     <>
-      <div className="bg-dark px-6 md:px-12 py-20 md:py-28 text-center relative overflow-hidden">
+      <div className="bg-dark px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-28 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"
              style={{
-               backgroundImage: 'url(https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80)',
-               backgroundSize: 'cover',
-               backgroundPosition: 'center'
-             }}
+backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
         ></div>
         <div className="relative z-10">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white mb-4">About Us</h1>
@@ -59,13 +62,23 @@ export default function AboutPage() {
           <div className="order-1 md:order-2">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
                 alt="Heritage Health System"
                 className="w-full h-auto"
                 loading="lazy"
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-teal/5 hhs-section">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="hhs-tag">Our Mission</div>
+          <h2 className="hhs-h2 text-3xl md:text-4xl mb-8">What Drives Us</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto italic">
+            &ldquo;Our mission is to offer evidence-based assistance and person-centered care to adults and their families who are facing mental health challenges with compassion and respect. At Heritage Health System, our mission is to provide compassionate, comprehensive and accessible mental health care to individuals and families in our community. We are committed to fostering an environment of healing, hope and empowerment, where every person feels valued and supported on their journey to mental wellness.&rdquo;
+          </p>
         </div>
       </div>
 
@@ -78,7 +91,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-shadow">
-                <div className="font-serif text-4xl md:text-5xl font-bold text-teal mb-2">{stat.number}</div>
+                {stat.number === '5-Star' ? (
+                  <div className="flex items-center justify-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-7 h-7 md:w-8 md:h-8 text-teal" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="font-serif text-4xl md:text-5xl font-bold text-teal mb-2">{stat.number}</div>
+                )}
                 <div className="text-base text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -109,15 +132,41 @@ export default function AboutPage() {
         </div>
       </div>
 
+      <div className="bg-white/50 hhs-section border-y border-border/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="hhs-tag">Insurance Accepted</div>
+          <h2 className="hhs-h2 mb-2">We Work With Your Insurance</h2>
+          <p className="text-sm text-muted max-w-xl mx-auto mb-2">We accept a wide range of insurance plans to make care accessible.</p>
+          <InsuranceLogos />
+        </div>
+      </div>
+
+      <div className="hhs-section">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="hhs-tag">Patient Reviews</div>
+            <h2 className="hhs-h2 text-3xl md:text-4xl mb-4">What Our Patients Say</h2>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <ReviewsSection limit={3} />
+            </div>
+            <div>
+              <ReviewForm />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="hhs-section px-0">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="bg-dark rounded-3xl p-10 md:p-16 text-white text-center overflow-hidden relative">
+          <div className="bg-dark rounded-3xl p-6 sm:p-10 md:p-16 text-white text-center overflow-hidden relative">
             <div className="absolute inset-0 opacity-5"
                  style={{
-                   backgroundImage: 'url(https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80)',
-                   backgroundSize: 'cover',
-                   backgroundPosition: 'center'
-                 }}
+backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
             ></div>
             <div className="relative z-10">
               <h3 className="font-serif text-2xl md:text-4xl font-bold mb-5">Ready to Begin Your Journey?</h3>
@@ -143,7 +192,7 @@ export default function AboutPage() {
             <div className="hhs-tag">Get in Touch</div>
             <h2 className="hhs-h2 text-3xl md:text-4xl mb-4">We&apos;d Love to Hear From You</h2>
           </div>
-          <div className="bg-white rounded-2xl p-8 md:p-10 border border-border shadow-lg">
+          <div className="bg-white rounded-2xl p-4 sm:p-8 md:p-10 border border-border shadow-lg">
             <p className="text-sm text-gray-500 leading-relaxed mb-6">Complete the form below to verify your insurance. Our team will contact you within 1&ndash;2 business days to schedule your appointment.</p>
             <BookingForm />
           </div>

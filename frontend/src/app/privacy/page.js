@@ -14,7 +14,7 @@ export default function PrivacyPage() {
             <section className="mb-10">
               <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">1. Introduction</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
-                Heritage Health System (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) is committed to protecting the privacy and security of your health information. This Privacy Policy describes how we collect, use, disclose, and safeguard your protected health information (PHI) in accordance with the Health Insurance Portability and Accountability Act of 1996 (HIPAA), the Texas Health and Safety Code, and other applicable federal and state laws.
+                Heritage Health System (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) is committed to protecting the privacy and security of your health information. This Privacy Policy describes how we collect, use, disclose, and safeguard your protected health information (PHI) in accordance with the Health Insurance Portability and Accountability Act of 1996 (HIPAA), the Massachusetts Health Care Privacy Laws (M.G.L. c. 111, § 70E and 105 CMR 130.000), and other applicable federal and state laws.
               </p>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 By using our services, you agree to the terms of this Privacy Policy. If you have any questions, please contact us at <a href="mailto:info@heritagehealthsystem.com" className="text-teal hover:text-teal-dark">info@heritagehealthsystem.com</a>.
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">5. Your Rights Under HIPAA and Texas Law</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">5. Your Rights Under HIPAA and Massachusetts Law</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">You have the right to:</p>
               <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-gray-600 leading-relaxed">
                 <li>Access and request copies of your health records.</li>
@@ -163,7 +163,7 @@ export default function PrivacyPage() {
               </p>
               <div className="bg-teal/5 rounded-xl p-6 border border-teal/20">
                 <p className="text-base md:text-lg text-gray-700 mb-2"><strong>Heritage Health System</strong></p>
-                <p className="text-base md:text-lg text-gray-600 mb-2">21 Mayor Thomas J McGrath Hwy Unit 306, Quincy, MA</p>
+                <p className="text-base md:text-lg text-gray-600 mb-2">21 Mayor Thomas J McGrath Hwy Unit 306, Quincy, MA 02169</p>
                 <p className="text-base md:text-lg text-gray-600 mb-2">Phone: <a href="tel:0017817420834" className="text-teal hover:text-teal-dark">(781) 742-0834</a></p>
                 <p className="text-base md:text-lg text-gray-600">Email: <a href="mailto:info@heritagehealthsystem.com" className="text-teal hover:text-teal-dark">info@heritagehealthsystem.com</a></p>
               </div>
@@ -177,7 +177,8 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-gray-600 leading-relaxed">
                 <li>Heritage Health System at the contact information above.</li>
                 <li>The U.S. Department of Health and Human Services Office for Civil Rights (OCR): <a href="https://www.hhs.gov/ocr/privacy/hipaa/complaints/index.html" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark">www.hhs.gov/ocr/privacy/hipaa/complaints/index.html</a>.</li>
-                <li>The Texas Health and Human Services Commission (HHSC): <a href="https://www.hhsc.texas.gov" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark">www.hhsc.texas.gov</a>.</li>
+                <li>The Massachusetts Department of Public Health (DPH) Division of Health Care Quality: <a href="https://www.mass.gov/orgs/division-of-health-care-quality" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark">www.mass.gov/orgs/division-of-health-care-quality</a>.</li>
+                <li>The Massachusetts Attorney General&apos;s Office: <a href="https://www.mass.gov/ago" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark">www.mass.gov/ago</a>.</li>
               </ul>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mt-4">We will not retaliate against you for filing a complaint.</p>
             </section>

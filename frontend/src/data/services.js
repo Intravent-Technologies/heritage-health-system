@@ -2,12 +2,12 @@ export const servicesMap = {
   'comprehensive-psychiatric-evaluation': {
     title: 'Comprehensive Psychiatric Evaluation',
     subtitle: 'Thorough assessment to understand your mental health needs and create a personalized treatment plan.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
     sections: [
       { heading: 'What to Expect', content: 'A comprehensive psychiatric evaluation is a thorough assessment of your mental health history, current symptoms, and overall well-being. This initial evaluation typically lasts 60-90 minutes and helps us understand your unique situation.' },
       { heading: 'Assessment Process', content: 'During the evaluation, we will discuss your medical history, family background, lifestyle factors, and any previous treatments. This holistic approach ensures that we consider all aspects of your health.' },
       { heading: 'Our Approach to Evaluation and Diagnosis', content: 'Our approach to mental health assessment incorporates a holistic perspective. Mental health assessments involve clinical interviews as well as psychiatric evaluations together with behavioral and cognitive tests. Licensed professionals conduct clinical interviews to investigate your thought processes and emotional responses along with behavioral tendencies for information gathering.' },
-      { heading: 'Why Comprehensive Psychiatric Evaluation Matters', content: 'Medical professionals use proper psychiatric evaluations to identify suitable treatments for specific mental health conditions of individual patients. People cannot receive suitable medical care when healthcare professionals fail to perform accurate diagnoses.' },
+      { heading: 'Why Comprehensive Psychiatric Evaluation Matters', content: 'Medical professionals use proper psychiatric evaluations to identify suitable treatments for specific mental health conditions of individual patients. People cannot receive suitable medical care when healthcare professionals fail to perform accurate diagnoses. Likewise, patients must provide honest, complete, and accurate information about their symptoms, history, and lifestyle. Without truthful input from the patient, even the most skilled clinician risks an inaccurate diagnosis or inappropriate treatment plan.' },
     ],
   },
   'medication-management': {
@@ -24,7 +24,7 @@ export const servicesMap = {
   'person-centered-behavioral-healthcare': {
     title: 'Person Centered Behavioral Healthcare',
     subtitle: 'Holistic behavioral health services focused on your individual needs, values, and personal goals.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    image: 'https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?w=800&q=80',
     sections: [
       { heading: 'Whole-Person Care', content: 'We believe in treating the whole person, not just symptoms. Our person-centered approach addresses the interconnected aspects of your mental, emotional, and physical well-being.' },
       { heading: 'Empowerment Through Partnership', content: 'You are the expert on your own life. We partner with you to develop strategies that align with your values, strengths, and personal circumstances.' },
@@ -35,7 +35,7 @@ export const servicesMap = {
   'counseling-services': {
     title: 'Counseling Services',
     subtitle: 'Professional counseling in a safe, supportive environment to help you navigate life\'s challenges.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
+    image: 'https://images.pexels.com/photos/5699421/pexels-photo-5699421.jpeg?w=800&q=80',
     sections: [
       { heading: 'Therapeutic Approaches', content: 'We offer evidence-based therapeutic modalities including cognitive-behavioral therapy (CBT), supportive psychotherapy, and other approaches tailored to your needs.' },
       { heading: 'Areas of Focus', content: 'Our counseling services address anxiety, depression, stress management, grief, life transitions, relationship challenges, and other mental health concerns.' },
@@ -46,7 +46,7 @@ export const servicesMap = {
   'diagnostic-evaluation': {
     title: 'Diagnostic Evaluation',
     subtitle: 'Accurate diagnostic assessment to guide effective treatment planning and better health outcomes.',
-    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80',
+    image: 'https://images.pexels.com/photos/7579831/pexels-photo-7579831.jpeg?w=800&q=80',
     sections: [
       { heading: 'Comprehensive Assessment', content: 'Our diagnostic evaluations use standardized tools and clinical expertise to accurately identify mental health conditions and their underlying causes.' },
       { heading: 'Differential Diagnosis', content: 'We carefully distinguish between conditions that may present with similar symptoms, ensuring that your treatment targets the right diagnosis.' },
@@ -57,12 +57,12 @@ export const servicesMap = {
   'telehealth-services': {
     title: 'Telehealth Services',
     subtitle: 'Convenient, secure virtual appointments from the comfort of your home.',
-    image: 'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?w=800&q=80',
+    image: 'https://images.pexels.com/photos/7195120/pexels-photo-7195120.jpeg?w=800&q=80',
     sections: [
       { heading: 'Virtual Care', content: 'Access quality mental health care from anywhere through our secure telehealth platform. Virtual visits offer flexibility and convenience while maintaining the same standard of care.' },
       { heading: 'Easy to Use', content: 'Our telehealth platform is user-friendly and accessible from your smartphone, tablet, or computer. We provide simple instructions to get you connected.' },
       { heading: 'Same Quality Care', content: 'Research shows that telehealth is as effective as in-person care for many mental health conditions. You receive the same personalized, evidence-based treatment.' },
-      { heading: 'How It Works', content: 'Getting started with telehealth is simple. After scheduling your appointment, you will receive a secure link to join your video consultation. No special software is required \u2014 just a device with a camera and internet connection.' },
+      { heading: 'How It Works', content: 'Getting started with telehealth is simple. After scheduling your appointment, you will receive a secure link to join your video consultation. No special software is required - just a device with a camera and internet connection.' },
     ],
   },
 }

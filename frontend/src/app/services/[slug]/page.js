@@ -15,7 +15,7 @@ export default function ServicePage({ params }) {
 
   return (
     <>
-      <section className="relative bg-cream px-6 md:px-12 py-16 md:py-24">
+      <section className="relative bg-cream px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
           <Link href="/" className="text-xs text-muted hover:text-teal transition mb-4 inline-block">&larr; Back to Home</Link>
           <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -34,7 +34,7 @@ export default function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20 px-6 md:px-12">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12">
         <div className="max-w-3xl mx-auto space-y-8">
           {service.sections.map((section) => (
             <div key={section.heading}>
@@ -45,7 +45,7 @@ export default function ServicePage({ params }) {
         </div>
       </section>
 
-      <section className="bg-cream py-16 md:py-20 px-6 md:px-12">
+      <section className="bg-cream py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <span className="hhs-tag">Get Started</span>
           <h2 className="font-serif text-2xl md:text-4xl text-dark mb-3">Ready to Book an Appointment?</h2>
