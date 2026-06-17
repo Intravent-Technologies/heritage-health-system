@@ -145,7 +145,7 @@ export default function HomePage() {
             <img
               src="/dr image.jpeg"
               alt="Dr. Olubunmi Olawale, PMHNP-BC"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               loading="lazy"
             />
             <div className="absolute top-4 right-4 bg-green text-white text-xs px-3 py-1.5 rounded-full font-medium">PMHNP-BC</div>

@@ -42,9 +42,9 @@ export default function Header() {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:pl-6 md:pr-8 flex items-center justify-between py-3 md:py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <img src="/logo.png" alt="Heritage Health System" className="h-12 sm:h-16 md:h-20 w-auto object-contain" />
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:pl-6 md:pr-8 flex items-center justify-between py-2 md:py-3">
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/logo.png" alt="Heritage Health System" className="h-14 sm:h-20 md:h-24 w-auto object-contain" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-5">
