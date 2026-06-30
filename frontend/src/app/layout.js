@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import EmergencyBanner from '../components/EmergencyBanner'
 import './globals.css'
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <Header />
+        <EmergencyBanner />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
