@@ -20,6 +20,7 @@ const INITIAL_FORM = {
   emergencyName: '', emergencyPhone: '', emergencyRelationship: '',
   appointmentType: '',
   hipaaConsent: false,
+  smsConsent: false,
 }
 
 export default function BookingForm() {
@@ -91,13 +92,17 @@ export default function BookingForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-serif text-xl text-dark mb-1">Inquiry Submitted!</h3>
-        <p className="text-sm text-gray-500 mb-5">Your information has been received. We will verify your insurance and contact you to schedule an appointment.</p>
+        <h3 className="font-serif text-xl text-dark mb-1">Thank You!</h3>
+        <p className="text-sm text-gray-500 mb-5">Thank you for contacting Heritage Health System.</p>
         <div className="bg-teal/5 border border-teal/10 rounded-lg p-4 text-left text-sm text-gray-600 space-y-2 mb-5">
           <p><strong>What happens next?</strong></p>
           <p>&bull; Our team will review your insurance information.</p>
           <p>&bull; We will contact you within 1-2 business days to schedule your appointment.</p>
           <p>&bull; Need immediate assistance? Call us at (781) 742-0834.</p>
+        </div>
+        <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 text-left text-sm text-gray-600 mb-5">
+          <p>If you opted in to receive SMS communications, you may receive appointment confirmations, appointment reminders, billing notifications, insurance verification updates, and follow-up communications.</p>
+          <p className="mt-2">Message frequency may vary. Reply STOP at any time to opt out.</p>
         </div>
         <button onClick={resetForm} className="text-sm text-teal hover:text-teal-dark underline">Submit another inquiry</button>
       </div>
@@ -219,6 +224,15 @@ export default function BookingForm() {
                 className="mt-0.5 w-4 h-4 rounded border-gray-300 text-teal focus:ring-teal" />
               <span className="text-xs text-gray-600 leading-relaxed">
                 I have read and agree to the <Link href="/privacy" target="_blank" className="text-teal hover:text-teal-dark underline">Notice of Privacy Practices</Link>. I acknowledge that my health information will be used and disclosed as described in the HIPAA Privacy Policy. I understand I may request a copy of the full Notice at any time.
+              </span>
+            </label>
+          </div>
+          <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mt-3">
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" name="smsConsent" checked={form.smsConsent} onChange={(e) => setForm({ ...form, smsConsent: e.target.checked })}
+                className="mt-0.5 w-4 h-4 rounded border-gray-300 text-teal focus:ring-teal" />
+              <span className="text-xs text-gray-600 leading-relaxed">
+                By checking this box, you agree to receive SMS messages from Heritage Health System related to appointment scheduling, appointment reminders, care coordination, follow-up care, prescription and treatment updates, billing notifications, insurance verification, and other healthcare-related communications. You may reply STOP to opt out at any time. Reply HELP to (781) 742-0834 for assistance. Message and data rates may apply. Message frequency will vary. Learn more in our <Link href="/privacy" target="_blank" className="text-teal hover:text-teal-dark underline">Privacy Policy</Link> and <Link href="/terms" target="_blank" className="text-teal hover:text-teal-dark underline">Terms &amp; Conditions</Link>.
               </span>
             </label>
           </div>

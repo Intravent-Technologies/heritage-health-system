@@ -58,6 +58,12 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5 text-sm text-gray-600 space-y-2">
+              <p className="font-medium text-dark">SMS Communications</p>
+              <p>By providing your mobile number and opting in, you consent to receive SMS communications from Heritage Health System regarding appointment scheduling, appointment reminders, follow-up care, billing notifications, insurance verification, and other healthcare-related communications.</p>
+              <p>Message frequency may vary. Message and data rates may apply.</p>
+              <p>Reply STOP to unsubscribe. Reply HELP for assistance.</p>
+            </div>
           </div>
           <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-10 border border-border">
             <h3 className="text-sm font-medium text-dark mb-2">Complete Your Booking</h3>

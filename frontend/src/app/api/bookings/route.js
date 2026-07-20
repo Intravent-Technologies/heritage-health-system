@@ -35,6 +35,8 @@ function buildEmailHtml(booking) {
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Name</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.emergencyName || 'N/A'}</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Phone</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.emergencyPhone || 'N/A'}</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Relationship</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.emergencyRelationship || 'N/A'}</td></tr>
+  <tr><td style="padding:8px 12px;background:#f0f4f4;font-weight:600;border:1px solid #ddd;" colspan="2">SMS Consent</td></tr>
+  <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">SMS Consent</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.smsConsent ? 'Yes' : 'No'}</td></tr>
   <tr><td style="padding:8px 12px;background:#f0f4f4;font-weight:600;border:1px solid #ddd;" colspan="2">Action Required</td></tr>
   <tr><td style="padding:6px 12px;border:1px solid #ddd;font-weight:500;">Booking ID</td><td style="padding:6px 12px;border:1px solid #ddd;">${booking.id}</td></tr>
 </table>
@@ -70,6 +72,7 @@ export async function POST(req) {
     insuranceCarrier, policyNumber,
     secondaryInsuranceCarrier, secondaryPolicyNumber,
     emergencyName, emergencyPhone, emergencyRelationship,
+    smsConsent,
   } = body
 
   if (!firstName || !lastName || !email || !phone || !dob) {
@@ -90,6 +93,7 @@ export async function POST(req) {
     emergencyName: emergencyName || '',
     emergencyPhone: emergencyPhone || '',
     emergencyRelationship: emergencyRelationship || '',
+    smsConsent: smsConsent === true,
     status: 'pending',
     createdAt: new Date().toISOString(),
   }

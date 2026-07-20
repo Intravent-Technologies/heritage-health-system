@@ -38,6 +38,7 @@ export default function Footer() {
               { label: 'Contact', path: '/contact' },
               { label: 'Preceptorship', path: '/preceptorship' },
               { label: 'Privacy Policy', path: '/privacy' },
+              { label: 'Terms & Conditions', path: '/terms' },
             ].map((link) => (
               <Link key={link.path} href={link.path} className="text-sm text-gray-400 hover:text-teal transition w-fit">
                 {link.label}

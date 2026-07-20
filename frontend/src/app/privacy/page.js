@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <>
       <div className="bg-dark px-6 md:px-12 py-16 md:py-24 text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-3">Privacy Policy</h1>
-        <p className="text-base md:text-lg text-teal-light">Last Updated: June 8, 2026</p>
+        <p className="text-base md:text-lg text-teal-light">Last Updated: July 20, 2026</p>
       </div>
 
       <div className="hhs-section">
@@ -143,21 +143,60 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">9. Children&apos;s Privacy</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">9. SMS Communications</h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                Heritage Health System may communicate with patients through SMS regarding healthcare services.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">These communications may include:</p>
+              <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                <li>Appointment scheduling</li>
+                <li>Appointment reminders</li>
+                <li>Follow-up care</li>
+                <li>Care coordination</li>
+                <li>Prescription reminders</li>
+                <li>Billing notifications</li>
+                <li>Insurance verification</li>
+                <li>General healthcare communications</li>
+              </ul>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                SMS consent and phone numbers collected for SMS communication purposes will not be shared with any third party or affiliates for marketing purposes.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                Phone numbers collected through our website are used solely for communications that patients have agreed to receive.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                Patients may opt out at any time by replying STOP to any SMS message.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                For assistance, reply HELP or contact Heritage Health System at <a href="tel:0017817420834" className="text-teal hover:text-teal-dark">(781) 742-0834</a>.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+                Standard message and data rates may apply.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                Message frequency may vary.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mt-4">
+                For full SMS terms, see our <Link href="/terms" className="text-teal hover:text-teal-dark underline">Terms &amp; Conditions</Link>.
+              </p>
+            </section>
+
+            <section className="mb-10">
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">10. Children&apos;s Privacy</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Our services are not intended for individuals under the age of 18 without parental or guardian consent. We do not knowingly collect personal information from children under 13 without verifiable parental consent in accordance with the Children&apos;s Online Privacy Protection Act (COPPA).
               </p>
             </section>
 
             <section className="mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">10. Changes to This Privacy Policy</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">11. Changes to This Privacy Policy</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 We reserve the right to update this Privacy Policy at any time. We will notify you of material changes by posting the updated policy on our website or sending you a direct communication. Your continued use of our services after such changes constitutes your acceptance of the revised policy.
               </p>
             </section>
 
             <section className="mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">11. Contact Us</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">12. Contact Us</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
                 If you have questions about this Privacy Policy or wish to exercise your rights, please contact:
               </p>
@@ -170,7 +209,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="mb-10">
-              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">10. Filing a Complaint</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-dark mb-4">13. Filing a Complaint</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
                 If you believe your privacy rights have been violated, you may file a complaint with:
               </p>
