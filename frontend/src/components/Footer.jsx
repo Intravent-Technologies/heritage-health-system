@@ -37,6 +37,7 @@ export default function Footer() {
               { label: 'Blog', path: '/blog' },
               { label: 'Contact', path: '/contact' },
               { label: 'Preceptorship', path: '/preceptorship' },
+              { label: 'Refill Request', path: '/refill-request' },
               { label: 'Privacy Policy', path: '/privacy' },
               { label: 'Terms & Conditions', path: '/terms' },
             ].map((link) => (

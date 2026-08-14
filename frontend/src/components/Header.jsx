@@ -74,6 +74,7 @@ export default function Header() {
 
           <Link href="/blog" className={`text-sm ${pathname === '/blog' ? 'text-teal font-medium' : 'text-gray-600'} hover:text-teal transition`}>Blog</Link>
           <Link href="/contact" className={`text-sm ${pathname === '/contact' ? 'text-teal font-medium' : 'text-gray-600'} hover:text-teal transition`}>Contact</Link>
+          <Link href="/refill-request" className={`text-sm ${pathname === '/refill-request' ? 'text-teal font-medium' : 'text-gray-600'} hover:text-teal transition`}>Refill Request</Link>
         </div>
 
         <div className="flex items-center gap-3">
@@ -138,6 +139,8 @@ export default function Header() {
               className={`text-base py-3 px-3 rounded-lg ${pathname === '/blog' ? 'text-teal font-medium bg-teal/5' : 'text-gray-600'} hover:text-teal hover:bg-teal/5 transition`}>Blog</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)}
               className={`text-base py-3 px-3 rounded-lg ${pathname === '/contact' ? 'text-teal font-medium bg-teal/5' : 'text-gray-600'} hover:text-teal hover:bg-teal/5 transition`}>Contact</Link>
+            <Link href="/refill-request" onClick={() => setMobileOpen(false)}
+              className={`text-base py-3 px-3 rounded-lg ${pathname === '/refill-request' ? 'text-teal font-medium bg-teal/5' : 'text-gray-600'} hover:text-teal hover:bg-teal/5 transition`}>Refill Request</Link>
 
             <div className="flex flex-col gap-2 mt-3">
               <Link href="/spravato" onClick={() => setMobileOpen(false)}
