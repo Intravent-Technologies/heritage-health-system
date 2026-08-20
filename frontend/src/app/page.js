@@ -1,51 +1,12 @@
 import Link from 'next/link'
-import BookingForm from '../components/BookingForm'
-import FounderBio from '../components/FounderBio'
-import PageCTA from '../components/PageCTA'
-import Resources from '../components/Resources'
-import ReviewsSection from '../components/ReviewsSection'
-import ReviewForm from '../components/ReviewForm'
-import InsuranceLogos from '../components/InsuranceLogos'
-
-const services = [
-  {
-    title: 'Psychiatric Evaluation',
-    desc: 'Comprehensive assessment of your emotional and psychological health to determine the best care path.',
-    path: '/services/comprehensive-psychiatric-evaluation',
-  },
-  {
-    title: 'Medication Management',
-    desc: 'Ongoing monitoring and adjustments to your psychiatric medications for optimal results.',
-    path: '/services/medication-management',
-  },
-  {
-    title: 'Counseling Services',
-    desc: 'Individual, group, and family therapy options tailored to meet your specific needs.',
-    path: '/services/counseling-services',
-  },
-  {
-    title: 'Diagnostic Evaluation',
-    desc: 'Detailed assessments to identify underlying causes of your mental health concerns.',
-    path: '/services/diagnostic-evaluation',
-  },
-  {
-    title: 'Telehealth Services',
-    desc: 'Secure video consultations bringing expert mental health care directly to you.',
-    path: '/services/telehealth-services',
-  },
-
-]
-
-const conditions = [
-  { label: 'ADHD' },
-  { label: 'Anxiety' },
-  { label: 'Depression' },
-  { label: 'Bipolar' },
-  { label: 'OCD' },
-  { label: 'PTSD' },
-  { label: 'Sleep Disorder' },
-  { label: 'Schizophrenia' },
-]
+import BookingForm from '../components/forms/BookingForm'
+import FounderBio from '../components/sections/FounderBio'
+import PageCTA from '../components/sections/PageCTA'
+import Resources from '../components/sections/Resources'
+import ReviewsSection from '../components/sections/ReviewsSection'
+import ReviewForm from '../components/sections/ReviewForm'
+import InsuranceLogos from '../components/sections/InsuranceLogos'
+import { HOME_SERVICES, CONDITIONS } from '../lib/constants'
 
 const faqs = [
   { q: 'How do I schedule an appointment?', a: 'Fill out our insurance verification form, and our team will contact you within 1\u20132 business days. You can typically be seen within 1\u20132 weeks. You can also call or text (781) 742-0834.' },
@@ -121,7 +82,7 @@ export default function HomePage() {
         <h2 className="hhs-h2">Expert Care for Your Well-being</h2>
         <p className="hhs-sub">A full spectrum of mental health services tailored to your individual needs, available both in-person and via telehealth.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((svc) => (
+          {HOME_SERVICES.map((svc) => (
             <Link key={svc.path} href={svc.path} className="bg-white rounded-xl p-8 border border-border hover:shadow-md transition group">
               <div className="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-teal/20 transition">
                 <svg className="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -176,7 +137,7 @@ export default function HomePage() {
           <h2 className="hhs-h2 text-white mb-2">Tailored Care for a Wide Range of Conditions</h2>
           <p className="text-base text-[#5a8a8e] leading-relaxed mb-8">Custom assessments and individualized treatment strategies to restore control over your well-being.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            {conditions.map((c) => (
+            {CONDITIONS.map((c) => (
               <div key={c.label} className="bg-white/10 border border-white/15 rounded-lg p-6 text-sm text-[#c8e0dd]">
                 <div className="text-teal text-xl mb-2">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { servicesMap } from '../../../data/services'
-import BookingForm from '../../../components/BookingForm'
-import PageCTA from '../../../components/PageCTA'
+import BookingForm from '../../../components/forms/BookingForm'
+import PageCTA from '../../../components/sections/PageCTA'
 
 export async function generateStaticParams() {
   return Object.keys(servicesMap).map((slug) => ({ slug }))

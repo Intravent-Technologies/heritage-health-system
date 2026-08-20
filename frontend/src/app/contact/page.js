@@ -1,6 +1,7 @@
-import BookingForm from '../../components/BookingForm'
-import PageCTA from '../../components/PageCTA'
-import InsuranceLogos from '../../components/InsuranceLogos'
+import BookingForm from '../../components/forms/BookingForm'
+import PageCTA from '../../components/sections/PageCTA'
+import InsuranceLogos from '../../components/sections/InsuranceLogos'
+import { BUSINESS } from '../../lib/constants'
 
 export default function ContactPage() {
   return (
@@ -34,10 +35,10 @@ export default function ContactPage() {
             </div>
             <div className="space-y-4 sm:space-y-5">
               {[
-                { icon: 'phone', label: 'Phone', value: '(781) 742-0834', href: 'tel:0017817420834' },
-                { icon: 'phone', label: 'Fax', value: '(781) 459-2666' },
-                { icon: 'mail', label: 'Support', value: 'info@heritagehealthsystem.com', href: 'mailto:info@heritagehealthsystem.com' },
-                { icon: 'map', label: 'Address', value: '21 Mayor Thomas J McGrath Hwy Unit 306, Quincy, MA 02169' },
+                { icon: 'phone', label: 'Phone', value: BUSINESS.phone, href: BUSINESS.phoneHref },
+                { icon: 'phone', label: 'Fax', value: BUSINESS.fax },
+                { icon: 'mail', label: 'Support', value: BUSINESS.email, href: BUSINESS.emailHref },
+                { icon: 'map', label: 'Address', value: BUSINESS.address },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-3 sm:gap-4">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -78,7 +79,7 @@ export default function ContactPage() {
           <div className="text-center mb-8">
             <div className="hhs-tag">Our Location</div>
             <h2 className="hhs-h2 mb-2">Find Us</h2>
-            <p className="text-sm text-muted">21 Mayor Thomas J McGrath Hwy, Unit 306, Quincy, MA 02169</p>
+            <p className="text-sm text-muted">{BUSINESS.address}</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
             <iframe

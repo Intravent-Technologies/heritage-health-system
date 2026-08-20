@@ -3,17 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-const services = [
-  { label: 'Comprehensive Psychiatric Eval', path: '/services/comprehensive-psychiatric-evaluation' },
-  { label: 'Medication Management', path: '/services/medication-management' },
-  { label: 'Person Centered Behavioral Healthcare', path: '/services/person-centered-behavioral-healthcare' },
-  { label: 'Counseling Services', path: '/services/counseling-services' },
-  { label: 'Diagnostic Evaluation', path: '/services/diagnostic-evaluation' },
-  { label: 'Telehealth Services', path: '/services/telehealth-services' },
-  { label: 'Spravato Treatment', path: '/spravato' },
-  { label: 'Refill Request', path: '/refill-request' },
-]
+import { SERVICES_NAV } from '../../lib/constants'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -39,7 +29,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const isServicesPage = services.some((s) => pathname === s.path)
+  const isServicesPage = SERVICES_NAV.some((s) => pathname === s.path)
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'}`}>
@@ -63,7 +53,7 @@ export default function Header() {
             <div className="absolute top-full left-0 h-4 w-full" />
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg border border-border/60 py-2 z-50 animate-fade-in">
-                {services.map((s) => (
+                {SERVICES_NAV.map((s) => (
                   <Link key={s.path} href={s.path} onClick={() => setServicesOpen(false)}
                     className={`block text-sm px-5 py-3 ${pathname === s.path ? 'text-teal font-medium' : 'text-gray-700'} hover:text-teal hover:bg-teal/5 transition`}>
                     {s.label}
@@ -125,7 +115,7 @@ export default function Header() {
               </button>
               {mobileServicesOpen && (
                 <div className="flex flex-col ml-3 pb-2 gap-0.5">
-                  {services.map((s) => (
+                  {SERVICES_NAV.map((s) => (
                     <Link key={s.path} href={s.path} onClick={() => { setMobileOpen(false); setMobileServicesOpen(false) }}
                       className={`text-sm py-2.5 px-3 rounded-lg ${pathname === s.path ? 'text-teal font-medium bg-teal/5' : 'text-gray-500'} hover:text-teal hover:bg-teal/5 transition`}>
                       {s.label}

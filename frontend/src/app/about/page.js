@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import BookingForm from '../../components/BookingForm'
-import PageCTA from '../../components/PageCTA'
-import ReviewsSection from '../../components/ReviewsSection'
-import ReviewForm from '../../components/ReviewForm'
-import InsuranceLogos from '../../components/InsuranceLogos'
+import BookingForm from '../../components/forms/BookingForm'
+import PageCTA from '../../components/sections/PageCTA'
+import ReviewsSection from '../../components/sections/ReviewsSection'
+import ReviewForm from '../../components/sections/ReviewForm'
+import InsuranceLogos from '../../components/sections/InsuranceLogos'
 
 const values = [
   { icon: 'compassion', title: 'Compassion', desc: 'We approach every patient with empathy, dignity, and respect.' },
@@ -33,7 +33,7 @@ export default function AboutPage() {
       <div className="bg-dark px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-28 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"
              style={{
-backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
+             backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}
@@ -163,7 +163,7 @@ backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?
           <div className="bg-dark rounded-3xl p-6 sm:p-10 md:p-16 text-white text-center overflow-hidden relative">
             <div className="absolute inset-0 opacity-5"
                  style={{
-backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
+                 backgroundImage: 'url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                   }}

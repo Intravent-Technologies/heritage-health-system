@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
-const DATA_DIR = join(process.cwd(), 'data')
+const DATA_DIR = join(process.cwd(), 'src', 'data')
 
 export function readJSON(file) {
   const p = join(DATA_DIR, file)

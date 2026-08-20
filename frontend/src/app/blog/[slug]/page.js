@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import FounderBio from '../../../components/FounderBio'
-import PageCTA from '../../../components/PageCTA'
+import FounderBio from '../../../components/sections/FounderBio'
+import PageCTA from '../../../components/sections/PageCTA'
 
 export default function BlogPostPage() {
   const { slug } = useParams()

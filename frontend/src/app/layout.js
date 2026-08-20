@@ -1,6 +1,6 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import EmergencyBanner from '../components/EmergencyBanner'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
+import EmergencyBanner from '../components/layout/EmergencyBanner'
 import './globals.css'
 
 export const metadata = {

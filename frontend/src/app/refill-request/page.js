@@ -1,5 +1,5 @@
-import RefillRequestForm from '../../components/RefillRequestForm'
-import PageCTA from '../../components/PageCTA'
+import RefillRequestForm from '../../components/forms/RefillRequestForm'
+import PageCTA from '../../components/sections/PageCTA'
 
 export default function RefillRequestPage() {
   return (
