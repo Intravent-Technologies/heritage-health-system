@@ -1,15 +1,4 @@
 export const servicesMap = {
-  'comprehensive-psychiatric-evaluation': {
-    title: 'Comprehensive Psychiatric Evaluation',
-    subtitle: 'Thorough assessment to understand your mental health needs and create a personalized treatment plan.',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
-    sections: [
-      { heading: 'What to Expect', content: 'A comprehensive psychiatric evaluation is a thorough assessment of your mental health history, current symptoms, and overall well-being. This initial evaluation typically lasts 60-90 minutes and helps us understand your unique situation.' },
-      { heading: 'Assessment Process', content: 'During the evaluation, we will discuss your medical history, family background, lifestyle factors, and any previous treatments. This holistic approach ensures that we consider all aspects of your health.' },
-      { heading: 'Our Approach to Evaluation and Diagnosis', content: 'Our approach to mental health assessment incorporates a holistic perspective. Mental health assessments involve clinical interviews as well as psychiatric evaluations together with behavioral and cognitive tests. Licensed professionals conduct clinical interviews to investigate your thought processes and emotional responses along with behavioral tendencies for information gathering.' },
-      { heading: 'Why Comprehensive Psychiatric Evaluation Matters', content: 'Medical professionals use proper psychiatric evaluations to identify suitable treatments for specific mental health conditions of individual patients. People cannot receive suitable medical care when healthcare professionals fail to perform accurate diagnoses. Likewise, patients must provide honest, complete, and accurate information about their symptoms, history, and lifestyle. Without truthful input from the patient, even the most skilled clinician risks an inaccurate diagnosis or inappropriate treatment plan.' },
-    ],
-  },
   'medication-management': {
     title: 'Medication Management',
     subtitle: 'Expert medication management to optimize your psychiatric treatment with compassionate, evidence-based care.',

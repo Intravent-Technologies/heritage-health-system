@@ -29,7 +29,6 @@ export const NAV_LINKS = [
 ]
 
 export const SERVICES_NAV = [
-  { label: 'Comprehensive Psychiatric Eval', path: '/services/comprehensive-psychiatric-evaluation' },
   { label: 'Medication Management', path: '/services/medication-management' },
   { label: 'Person Centered Behavioral Healthcare', path: '/services/person-centered-behavioral-healthcare' },
   { label: 'Counseling Services', path: '/services/counseling-services' },
@@ -40,11 +39,6 @@ export const SERVICES_NAV = [
 ]
 
 export const HOME_SERVICES = [
-  {
-    title: 'Psychiatric Evaluation',
-    desc: 'Comprehensive assessment of your emotional and psychological health to determine the best care path.',
-    path: '/services/comprehensive-psychiatric-evaluation',
-  },
   {
     title: 'Medication Management',
     desc: 'Ongoing monitoring and adjustments to your psychiatric medications for optimal results.',
